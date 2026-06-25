@@ -1,0 +1,880 @@
+(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,812207,315193,131507,654479,108285,e=>{"use strict";let r=globalThis,t=r.ShadowRoot&&(void 0===r.ShadyCSS||r.ShadyCSS.nativeShadow)&&"adoptedStyleSheets"in Document.prototype&&"replace"in CSSStyleSheet.prototype,o=Symbol(),i=new WeakMap;class s{constructor(e,r,t){if(this._$cssResult$=!0,t!==o)throw Error("CSSResult is not constructable. Use `unsafeCSS` or `css` instead.");this.cssText=e,this.t=r}get styleSheet(){let e=this.o,r=this.t;if(t&&void 0===e){let t=void 0!==r&&1===r.length;t&&(e=i.get(r)),void 0===e&&((this.o=e=new CSSStyleSheet).replaceSync(this.cssText),t&&i.set(r,e))}return e}toString(){return this.cssText}}let l=e=>new s("string"==typeof e?e:e+"",void 0,o),a=(e,o)=>{if(t)e.adoptedStyleSheets=o.map(e=>e instanceof CSSStyleSheet?e:e.styleSheet);else for(let t of o){let o=document.createElement("style"),i=r.litNonce;void 0!==i&&o.setAttribute("nonce",i),o.textContent=t.cssText,e.appendChild(o)}},n=t?e=>e:e=>e instanceof CSSStyleSheet?(e=>{let r="";for(let t of e.cssRules)r+=t.cssText;return l(r)})(e):e;e.s(["adoptStyles",0,a,"css",0,(e,...r)=>new s(1===e.length?e[0]:r.reduce((r,t,o)=>r+(e=>{if(!0===e._$cssResult$)return e.cssText;if("number"==typeof e)return e;throw Error("Value passed to 'css' function must be a 'css' function result: "+e+". Use 'unsafeCSS' to pass non-literal values, but take care to ensure page security.")})(t)+e[o+1],e[0]),e,o),"getCompatibleStyle",0,n,"unsafeCSS",0,l],315193);let{is:c,defineProperty:u,getOwnPropertyDescriptor:g,getOwnPropertyNames:w,getOwnPropertySymbols:h,getPrototypeOf:b}=Object,d=globalThis,m=d.trustedTypes,f=m?m.emptyScript:"",p=d.reactiveElementPolyfillSupport,v={toAttribute(e,r){switch(r){case Boolean:e=e?f:null;break;case Object:case Array:e=null==e?e:JSON.stringify(e)}return e},fromAttribute(e,r){let t=e;switch(r){case Boolean:t=null!==e;break;case Number:t=null===e?null:Number(e);break;case Object:case Array:try{t=JSON.parse(e)}catch(e){t=null}}return t}},x=(e,r)=>!c(e,r),y={attribute:!0,type:String,converter:v,reflect:!1,useDefault:!1,hasChanged:x};Symbol.metadata??=Symbol("metadata"),d.litPropertyMetadata??=new WeakMap;class _ extends HTMLElement{static addInitializer(e){this._$Ei(),(this.l??=[]).push(e)}static get observedAttributes(){return this.finalize(),this._$Eh&&[...this._$Eh.keys()]}static createProperty(e,r=y){if(r.state&&(r.attribute=!1),this._$Ei(),this.prototype.hasOwnProperty(e)&&((r=Object.create(r)).wrapped=!0),this.elementProperties.set(e,r),!r.noAccessor){let t=Symbol(),o=this.getPropertyDescriptor(e,t,r);void 0!==o&&u(this.prototype,e,o)}}static getPropertyDescriptor(e,r,t){let{get:o,set:i}=g(this.prototype,e)??{get(){return this[r]},set(e){this[r]=e}};return{get:o,set(r){let s=o?.call(this);i?.call(this,r),this.requestUpdate(e,s,t)},configurable:!0,enumerable:!0}}static getPropertyOptions(e){return this.elementProperties.get(e)??y}static _$Ei(){if(this.hasOwnProperty("elementProperties"))return;let e=b(this);e.finalize(),void 0!==e.l&&(this.l=[...e.l]),this.elementProperties=new Map(e.elementProperties)}static finalize(){if(this.hasOwnProperty("finalized"))return;if(this.finalized=!0,this._$Ei(),this.hasOwnProperty("properties")){let e=this.properties;for(let r of[...w(e),...h(e)])this.createProperty(r,e[r])}let e=this[Symbol.metadata];if(null!==e){let r=litPropertyMetadata.get(e);if(void 0!==r)for(let[e,t]of r)this.elementProperties.set(e,t)}for(let[e,r]of(this._$Eh=new Map,this.elementProperties)){let t=this._$Eu(e,r);void 0!==t&&this._$Eh.set(t,e)}this.elementStyles=this.finalizeStyles(this.styles)}static finalizeStyles(e){let r=[];if(Array.isArray(e))for(let t of new Set(e.flat(1/0).reverse()))r.unshift(n(t));else void 0!==e&&r.push(n(e));return r}static _$Eu(e,r){let t=r.attribute;return!1===t?void 0:"string"==typeof t?t:"string"==typeof e?e.toLowerCase():void 0}constructor(){super(),this._$Ep=void 0,this.isUpdatePending=!1,this.hasUpdated=!1,this._$Em=null,this._$Ev()}_$Ev(){this._$ES=new Promise(e=>this.enableUpdating=e),this._$AL=new Map,this._$E_(),this.requestUpdate(),this.constructor.l?.forEach(e=>e(this))}addController(e){(this._$EO??=new Set).add(e),void 0!==this.renderRoot&&this.isConnected&&e.hostConnected?.()}removeController(e){this._$EO?.delete(e)}_$E_(){let e=new Map;for(let r of this.constructor.elementProperties.keys())this.hasOwnProperty(r)&&(e.set(r,this[r]),delete this[r]);e.size>0&&(this._$Ep=e)}createRenderRoot(){let e=this.shadowRoot??this.attachShadow(this.constructor.shadowRootOptions);return a(e,this.constructor.elementStyles),e}connectedCallback(){this.renderRoot??=this.createRenderRoot(),this.enableUpdating(!0),this._$EO?.forEach(e=>e.hostConnected?.())}enableUpdating(e){}disconnectedCallback(){this._$EO?.forEach(e=>e.hostDisconnected?.())}attributeChangedCallback(e,r,t){this._$AK(e,t)}_$ET(e,r){let t=this.constructor.elementProperties.get(e),o=this.constructor._$Eu(e,t);if(void 0!==o&&!0===t.reflect){let i=(void 0!==t.converter?.toAttribute?t.converter:v).toAttribute(r,t.type);this._$Em=e,null==i?this.removeAttribute(o):this.setAttribute(o,i),this._$Em=null}}_$AK(e,r){let t=this.constructor,o=t._$Eh.get(e);if(void 0!==o&&this._$Em!==o){let e=t.getPropertyOptions(o),i="function"==typeof e.converter?{fromAttribute:e.converter}:void 0!==e.converter?.fromAttribute?e.converter:v;this._$Em=o;let s=i.fromAttribute(r,e.type);this[o]=s??this._$Ej?.get(o)??s,this._$Em=null}}requestUpdate(e,r,t,o=!1,i){if(void 0!==e){let s=this.constructor;if(!1===o&&(i=this[e]),!(((t??=s.getPropertyOptions(e)).hasChanged??x)(i,r)||t.useDefault&&t.reflect&&i===this._$Ej?.get(e)&&!this.hasAttribute(s._$Eu(e,t))))return;this.C(e,r,t)}!1===this.isUpdatePending&&(this._$ES=this._$EP())}C(e,r,{useDefault:t,reflect:o,wrapped:i},s){t&&!(this._$Ej??=new Map).has(e)&&(this._$Ej.set(e,s??r??this[e]),!0!==i||void 0!==s)||(this._$AL.has(e)||(this.hasUpdated||t||(r=void 0),this._$AL.set(e,r)),!0===o&&this._$Em!==e&&(this._$Eq??=new Set).add(e))}async _$EP(){this.isUpdatePending=!0;try{await this._$ES}catch(e){Promise.reject(e)}let e=this.scheduleUpdate();return null!=e&&await e,!this.isUpdatePending}scheduleUpdate(){return this.performUpdate()}performUpdate(){if(!this.isUpdatePending)return;if(!this.hasUpdated){if(this.renderRoot??=this.createRenderRoot(),this._$Ep){for(let[e,r]of this._$Ep)this[e]=r;this._$Ep=void 0}let e=this.constructor.elementProperties;if(e.size>0)for(let[r,t]of e){let{wrapped:e}=t,o=this[r];!0!==e||this._$AL.has(r)||void 0===o||this.C(r,void 0,t,o)}}let e=!1,r=this._$AL;try{(e=this.shouldUpdate(r))?(this.willUpdate(r),this._$EO?.forEach(e=>e.hostUpdate?.()),this.update(r)):this._$EM()}catch(r){throw e=!1,this._$EM(),r}e&&this._$AE(r)}willUpdate(e){}_$AE(e){this._$EO?.forEach(e=>e.hostUpdated?.()),this.hasUpdated||(this.hasUpdated=!0,this.firstUpdated(e)),this.updated(e)}_$EM(){this._$AL=new Map,this.isUpdatePending=!1}get updateComplete(){return this.getUpdateComplete()}getUpdateComplete(){return this._$ES}shouldUpdate(e){return!0}update(e){this._$Eq&&=this._$Eq.forEach(e=>this._$ET(e,this[e])),this._$EM()}updated(e){}firstUpdated(e){}}_.elementStyles=[],_.shadowRootOptions={mode:"open"},_.elementProperties=new Map,_.finalized=new Map,p?.({ReactiveElement:_}),(d.reactiveElementVersions??=[]).push("2.1.2"),e.s(["ReactiveElement",0,_,"defaultConverter",0,v,"notEqual",0,x],131507);let $=globalThis,A=e=>e,S=$.trustedTypes,z=S?S.createPolicy("lit-html",{createHTML:e=>e}):void 0,E="$lit$",C=`lit$${Math.random().toFixed(9).slice(2)}$`,k="?"+C,O=`<${k}>`,L=document,T=()=>L.createComment(""),P=e=>null===e||"object"!=typeof e&&"function"!=typeof e,N=Array.isArray,U=e=>N(e)||"function"==typeof e?.[Symbol.iterator],I="[ 	\n\f\r]",j=/<(?:(!--|\/[^a-zA-Z])|(\/?[a-zA-Z][^>\s]*)|(\/?$))/g,R=/-->/g,M=/>/g,H=RegExp(`>|${I}(?:([^\\s"'>=/]+)(${I}*=${I}*(?:[^ 	
+\f\r"'\`<>=]|("|')|))|$)`,"g"),B=/'/g,D=/"/g,V=/^(?:script|style|textarea|title)$/i,W=e=>(r,...t)=>({_$litType$:e,strings:r,values:t}),q=W(1),J=W(2),Z=(W(3),Symbol.for("lit-noChange")),F=Symbol.for("lit-nothing"),G=new WeakMap,Y=L.createTreeWalker(L,129);function K(e,r){if(!N(e)||!e.hasOwnProperty("raw"))throw Error("invalid template strings array");return void 0!==z?z.createHTML(r):r}let X=(e,r)=>{let t=e.length-1,o=[],i,s=2===r?"<svg>":3===r?"<math>":"",l=j;for(let r=0;r<t;r++){let t=e[r],a,n,c=-1,u=0;for(;u<t.length&&(l.lastIndex=u,null!==(n=l.exec(t)));)u=l.lastIndex,l===j?"!--"===n[1]?l=R:void 0!==n[1]?l=M:void 0!==n[2]?(V.test(n[2])&&(i=RegExp("</"+n[2],"g")),l=H):void 0!==n[3]&&(l=H):l===H?">"===n[0]?(l=i??j,c=-1):void 0===n[1]?c=-2:(c=l.lastIndex-n[2].length,a=n[1],l=void 0===n[3]?H:'"'===n[3]?D:B):l===D||l===B?l=H:l===R||l===M?l=j:(l=H,i=void 0);let g=l===H&&e[r+1].startsWith("/>")?" ":"";s+=l===j?t+O:c>=0?(o.push(a),t.slice(0,c)+E+t.slice(c)+C+g):t+C+(-2===c?r:g)}return[K(e,s+(e[t]||"<?>")+(2===r?"</svg>":3===r?"</math>":"")),o]};class Q{constructor({strings:e,_$litType$:r},t){let o;this.parts=[];let i=0,s=0;const l=e.length-1,a=this.parts,[n,c]=X(e,r);if(this.el=Q.createElement(n,t),Y.currentNode=this.el.content,2===r||3===r){const e=this.el.content.firstChild;e.replaceWith(...e.childNodes)}for(;null!==(o=Y.nextNode())&&a.length<l;){if(1===o.nodeType){if(o.hasAttributes())for(const e of o.getAttributeNames())if(e.endsWith(E)){const r=c[s++],t=o.getAttribute(e).split(C),l=/([.?@])?(.*)/.exec(r);a.push({type:1,index:i,name:l[2],strings:t,ctor:"."===l[1]?ei:"?"===l[1]?es:"@"===l[1]?el:eo}),o.removeAttribute(e)}else e.startsWith(C)&&(a.push({type:6,index:i}),o.removeAttribute(e));if(V.test(o.tagName)){const e=o.textContent.split(C),r=e.length-1;if(r>0){o.textContent=S?S.emptyScript:"";for(let t=0;t<r;t++)o.append(e[t],T()),Y.nextNode(),a.push({type:2,index:++i});o.append(e[r],T())}}}else if(8===o.nodeType)if(o.data===k)a.push({type:2,index:i});else{let e=-1;for(;-1!==(e=o.data.indexOf(C,e+1));)a.push({type:7,index:i}),e+=C.length-1}i++}}static createElement(e,r){let t=L.createElement("template");return t.innerHTML=e,t}}function ee(e,r,t=e,o){if(r===Z)return r;let i=void 0!==o?t._$Co?.[o]:t._$Cl,s=P(r)?void 0:r._$litDirective$;return i?.constructor!==s&&(i?._$AO?.(!1),void 0===s?i=void 0:(i=new s(e))._$AT(e,t,o),void 0!==o?(t._$Co??=[])[o]=i:t._$Cl=i),void 0!==i&&(r=ee(e,i._$AS(e,r.values),i,o)),r}class er{constructor(e,r){this._$AV=[],this._$AN=void 0,this._$AD=e,this._$AM=r}get parentNode(){return this._$AM.parentNode}get _$AU(){return this._$AM._$AU}u(e){let{el:{content:r},parts:t}=this._$AD,o=(e?.creationScope??L).importNode(r,!0);Y.currentNode=o;let i=Y.nextNode(),s=0,l=0,a=t[0];for(;void 0!==a;){if(s===a.index){let r;2===a.type?r=new et(i,i.nextSibling,this,e):1===a.type?r=new a.ctor(i,a.name,a.strings,this,e):6===a.type&&(r=new ea(i,this,e)),this._$AV.push(r),a=t[++l]}s!==a?.index&&(i=Y.nextNode(),s++)}return Y.currentNode=L,o}p(e){let r=0;for(let t of this._$AV)void 0!==t&&(void 0!==t.strings?(t._$AI(e,t,r),r+=t.strings.length-2):t._$AI(e[r])),r++}}class et{get _$AU(){return this._$AM?._$AU??this._$Cv}constructor(e,r,t,o){this.type=2,this._$AH=F,this._$AN=void 0,this._$AA=e,this._$AB=r,this._$AM=t,this.options=o,this._$Cv=o?.isConnected??!0}get parentNode(){let e=this._$AA.parentNode,r=this._$AM;return void 0!==r&&11===e?.nodeType&&(e=r.parentNode),e}get startNode(){return this._$AA}get endNode(){return this._$AB}_$AI(e,r=this){P(e=ee(this,e,r))?e===F||null==e||""===e?(this._$AH!==F&&this._$AR(),this._$AH=F):e!==this._$AH&&e!==Z&&this._(e):void 0!==e._$litType$?this.$(e):void 0!==e.nodeType?this.T(e):U(e)?this.k(e):this._(e)}O(e){return this._$AA.parentNode.insertBefore(e,this._$AB)}T(e){this._$AH!==e&&(this._$AR(),this._$AH=this.O(e))}_(e){this._$AH!==F&&P(this._$AH)?this._$AA.nextSibling.data=e:this.T(L.createTextNode(e)),this._$AH=e}$(e){let{values:r,_$litType$:t}=e,o="number"==typeof t?this._$AC(e):(void 0===t.el&&(t.el=Q.createElement(K(t.h,t.h[0]),this.options)),t);if(this._$AH?._$AD===o)this._$AH.p(r);else{let e=new er(o,this),t=e.u(this.options);e.p(r),this.T(t),this._$AH=e}}_$AC(e){let r=G.get(e.strings);return void 0===r&&G.set(e.strings,r=new Q(e)),r}k(e){N(this._$AH)||(this._$AH=[],this._$AR());let r=this._$AH,t,o=0;for(let i of e)o===r.length?r.push(t=new et(this.O(T()),this.O(T()),this,this.options)):t=r[o],t._$AI(i),o++;o<r.length&&(this._$AR(t&&t._$AB.nextSibling,o),r.length=o)}_$AR(e=this._$AA.nextSibling,r){for(this._$AP?.(!1,!0,r);e!==this._$AB;){let r=A(e).nextSibling;A(e).remove(),e=r}}setConnected(e){void 0===this._$AM&&(this._$Cv=e,this._$AP?.(e))}}class eo{get tagName(){return this.element.tagName}get _$AU(){return this._$AM._$AU}constructor(e,r,t,o,i){this.type=1,this._$AH=F,this._$AN=void 0,this.element=e,this.name=r,this._$AM=o,this.options=i,t.length>2||""!==t[0]||""!==t[1]?(this._$AH=Array(t.length-1).fill(new String),this.strings=t):this._$AH=F}_$AI(e,r=this,t,o){let i=this.strings,s=!1;if(void 0===i)(s=!P(e=ee(this,e,r,0))||e!==this._$AH&&e!==Z)&&(this._$AH=e);else{let o,l,a=e;for(e=i[0],o=0;o<i.length-1;o++)(l=ee(this,a[t+o],r,o))===Z&&(l=this._$AH[o]),s||=!P(l)||l!==this._$AH[o],l===F?e=F:e!==F&&(e+=(l??"")+i[o+1]),this._$AH[o]=l}s&&!o&&this.j(e)}j(e){e===F?this.element.removeAttribute(this.name):this.element.setAttribute(this.name,e??"")}}class ei extends eo{constructor(){super(...arguments),this.type=3}j(e){this.element[this.name]=e===F?void 0:e}}class es extends eo{constructor(){super(...arguments),this.type=4}j(e){this.element.toggleAttribute(this.name,!!e&&e!==F)}}class el extends eo{constructor(e,r,t,o,i){super(e,r,t,o,i),this.type=5}_$AI(e,r=this){if((e=ee(this,e,r,0)??F)===Z)return;let t=this._$AH,o=e===F&&t!==F||e.capture!==t.capture||e.once!==t.once||e.passive!==t.passive,i=e!==F&&(t===F||o);o&&this.element.removeEventListener(this.name,this,t),i&&this.element.addEventListener(this.name,this,e),this._$AH=e}handleEvent(e){"function"==typeof this._$AH?this._$AH.call(this.options?.host??this.element,e):this._$AH.handleEvent(e)}}class ea{constructor(e,r,t){this.element=e,this.type=6,this._$AN=void 0,this._$AM=r,this.options=t}get _$AU(){return this._$AM._$AU}_$AI(e){ee(this,e)}}let en=$.litHtmlPolyfillSupport;en?.(Q,et),($.litHtmlVersions??=[]).push("3.3.2");let ec=(e,r,t)=>{let o=t?.renderBefore??r,i=o._$litPart$;if(void 0===i){let e=t?.renderBefore??null;o._$litPart$=i=new et(r.insertBefore(T(),e),e,void 0,t??{})}return i._$AI(e),i};e.s(["_$LH",0,{M:E,P:C,A:k,C:1,L:X,R:er,D:U,V:ee,I:et,H:eo,N:es,U:el,B:ei,F:ea},"html",0,q,"noChange",0,Z,"nothing",0,F,"render",0,ec,"svg",0,J],654479);let eu=globalThis;class eg extends _{constructor(){super(...arguments),this.renderOptions={host:this},this._$Do=void 0}createRenderRoot(){let e=super.createRenderRoot();return this.renderOptions.renderBefore??=e.firstChild,e}update(e){let r=this.render();this.hasUpdated||(this.renderOptions.isConnected=this.isConnected),super.update(e),this._$Do=ec(r,this.renderRoot,this.renderOptions)}connectedCallback(){super.connectedCallback(),this._$Do?.setConnected(!0)}disconnectedCallback(){super.disconnectedCallback(),this._$Do?.setConnected(!1)}render(){return Z}}eg._$litElement$=!0,eg.finalized=!0,eu.litElementHydrateSupport?.({LitElement:eg});let ew=eu.litElementPolyfillSupport;ew?.({LitElement:eg}),(eu.litElementVersions??=[]).push("4.2.2"),e.s(["LitElement",0,eg],108285),e.s([],812207)},404041,459088,e=>{"use strict";let r,t,o;e.i(812207);var i=e.i(315193),s=e.i(90068);function l(e){t&&o&&("light"===e?(t.removeAttribute("media"),o.media="enabled"):(o.removeAttribute("media"),t.media="enabled"))}function a(e){return{core:i.css`
+      ${e?.["--w3m-font-family"]?i.css``:i.css`
+            @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+          `}
+      @keyframes w3m-shake {
+        0% {
+          transform: scale(1) rotate(0deg);
+        }
+        20% {
+          transform: scale(1) rotate(-1deg);
+        }
+        40% {
+          transform: scale(1) rotate(1.5deg);
+        }
+        60% {
+          transform: scale(1) rotate(-1.5deg);
+        }
+        80% {
+          transform: scale(1) rotate(1deg);
+        }
+        100% {
+          transform: scale(1) rotate(0deg);
+        }
+      }
+      @keyframes w3m-iframe-fade-out {
+        0% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+      @keyframes w3m-iframe-zoom-in {
+        0% {
+          transform: translateY(50px);
+          opacity: 0;
+        }
+        100% {
+          transform: translateY(0px);
+          opacity: 1;
+        }
+      }
+      @keyframes w3m-iframe-zoom-in-mobile {
+        0% {
+          transform: scale(0.95);
+          opacity: 0;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+      :root {
+        --w3m-modal-width: 360px;
+        --w3m-color-mix-strength: ${(0,i.unsafeCSS)(e?.["--w3m-color-mix-strength"]?`${e["--w3m-color-mix-strength"]}%`:"0%")};
+        --w3m-font-family: ${(0,i.unsafeCSS)(e?.["--w3m-font-family"]||"Inter, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;")};
+        --w3m-font-size-master: ${(0,i.unsafeCSS)(e?.["--w3m-font-size-master"]||"10px")};
+        --w3m-border-radius-master: ${(0,i.unsafeCSS)(e?.["--w3m-border-radius-master"]||"4px")};
+        --w3m-z-index: ${(0,i.unsafeCSS)(e?.["--w3m-z-index"]||999)};
+
+        --wui-font-family: var(--w3m-font-family);
+
+        --wui-font-size-mini: calc(var(--w3m-font-size-master) * 0.8);
+        --wui-font-size-micro: var(--w3m-font-size-master);
+        --wui-font-size-tiny: calc(var(--w3m-font-size-master) * 1.2);
+        --wui-font-size-small: calc(var(--w3m-font-size-master) * 1.4);
+        --wui-font-size-paragraph: calc(var(--w3m-font-size-master) * 1.6);
+        --wui-font-size-medium: calc(var(--w3m-font-size-master) * 1.8);
+        --wui-font-size-large: calc(var(--w3m-font-size-master) * 2);
+        --wui-font-size-title-6: calc(var(--w3m-font-size-master) * 2.2);
+        --wui-font-size-medium-title: calc(var(--w3m-font-size-master) * 2.4);
+        --wui-font-size-2xl: calc(var(--w3m-font-size-master) * 4);
+
+        --wui-border-radius-5xs: var(--w3m-border-radius-master);
+        --wui-border-radius-4xs: calc(var(--w3m-border-radius-master) * 1.5);
+        --wui-border-radius-3xs: calc(var(--w3m-border-radius-master) * 2);
+        --wui-border-radius-xxs: calc(var(--w3m-border-radius-master) * 3);
+        --wui-border-radius-xs: calc(var(--w3m-border-radius-master) * 4);
+        --wui-border-radius-s: calc(var(--w3m-border-radius-master) * 5);
+        --wui-border-radius-m: calc(var(--w3m-border-radius-master) * 7);
+        --wui-border-radius-l: calc(var(--w3m-border-radius-master) * 9);
+        --wui-border-radius-3xl: calc(var(--w3m-border-radius-master) * 20);
+
+        --wui-font-weight-light: 400;
+        --wui-font-weight-regular: 500;
+        --wui-font-weight-medium: 600;
+        --wui-font-weight-bold: 700;
+
+        --wui-letter-spacing-2xl: -1.6px;
+        --wui-letter-spacing-medium-title: -0.96px;
+        --wui-letter-spacing-title-6: -0.88px;
+        --wui-letter-spacing-large: -0.8px;
+        --wui-letter-spacing-medium: -0.72px;
+        --wui-letter-spacing-paragraph: -0.64px;
+        --wui-letter-spacing-small: -0.56px;
+        --wui-letter-spacing-tiny: -0.48px;
+        --wui-letter-spacing-micro: -0.2px;
+        --wui-letter-spacing-mini: -0.16px;
+
+        --wui-spacing-0: 0px;
+        --wui-spacing-4xs: 2px;
+        --wui-spacing-3xs: 4px;
+        --wui-spacing-xxs: 6px;
+        --wui-spacing-2xs: 7px;
+        --wui-spacing-xs: 8px;
+        --wui-spacing-1xs: 10px;
+        --wui-spacing-s: 12px;
+        --wui-spacing-m: 14px;
+        --wui-spacing-l: 16px;
+        --wui-spacing-2l: 18px;
+        --wui-spacing-xl: 20px;
+        --wui-spacing-xxl: 24px;
+        --wui-spacing-2xl: 32px;
+        --wui-spacing-3xl: 40px;
+        --wui-spacing-4xl: 90px;
+        --wui-spacing-5xl: 95px;
+
+        --wui-icon-box-size-xxs: 14px;
+        --wui-icon-box-size-xs: 20px;
+        --wui-icon-box-size-sm: 24px;
+        --wui-icon-box-size-md: 32px;
+        --wui-icon-box-size-mdl: 36px;
+        --wui-icon-box-size-lg: 40px;
+        --wui-icon-box-size-2lg: 48px;
+        --wui-icon-box-size-xl: 64px;
+
+        --wui-icon-size-inherit: inherit;
+        --wui-icon-size-xxs: 10px;
+        --wui-icon-size-xs: 12px;
+        --wui-icon-size-sm: 14px;
+        --wui-icon-size-md: 16px;
+        --wui-icon-size-mdl: 18px;
+        --wui-icon-size-lg: 20px;
+        --wui-icon-size-xl: 24px;
+        --wui-icon-size-xxl: 28px;
+
+        --wui-wallet-image-size-inherit: inherit;
+        --wui-wallet-image-size-sm: 40px;
+        --wui-wallet-image-size-md: 56px;
+        --wui-wallet-image-size-lg: 80px;
+
+        --wui-visual-size-size-inherit: inherit;
+        --wui-visual-size-sm: 40px;
+        --wui-visual-size-md: 55px;
+        --wui-visual-size-lg: 80px;
+
+        --wui-box-size-md: 100px;
+        --wui-box-size-lg: 120px;
+
+        --wui-ease-out-power-2: cubic-bezier(0, 0, 0.22, 1);
+        --wui-ease-out-power-1: cubic-bezier(0, 0, 0.55, 1);
+
+        --wui-ease-in-power-3: cubic-bezier(0.66, 0, 1, 1);
+        --wui-ease-in-power-2: cubic-bezier(0.45, 0, 1, 1);
+        --wui-ease-in-power-1: cubic-bezier(0.3, 0, 1, 1);
+
+        --wui-ease-inout-power-1: cubic-bezier(0.45, 0, 0.55, 1);
+
+        --wui-duration-lg: 200ms;
+        --wui-duration-md: 125ms;
+        --wui-duration-sm: 75ms;
+
+        --wui-path-network-sm: path(
+          'M15.4 2.1a5.21 5.21 0 0 1 5.2 0l11.61 6.7a5.21 5.21 0 0 1 2.61 4.52v13.4c0 1.87-1 3.59-2.6 4.52l-11.61 6.7c-1.62.93-3.6.93-5.22 0l-11.6-6.7a5.21 5.21 0 0 1-2.61-4.51v-13.4c0-1.87 1-3.6 2.6-4.52L15.4 2.1Z'
+        );
+
+        --wui-path-network-md: path(
+          'M43.4605 10.7248L28.0485 1.61089C25.5438 0.129705 22.4562 0.129705 19.9515 1.61088L4.53951 10.7248C2.03626 12.2051 0.5 14.9365 0.5 17.886V36.1139C0.5 39.0635 2.03626 41.7949 4.53951 43.2752L19.9515 52.3891C22.4562 53.8703 25.5438 53.8703 28.0485 52.3891L43.4605 43.2752C45.9637 41.7949 47.5 39.0635 47.5 36.114V17.8861C47.5 14.9365 45.9637 12.2051 43.4605 10.7248Z'
+        );
+
+        --wui-path-network-lg: path(
+          'M78.3244 18.926L50.1808 2.45078C45.7376 -0.150261 40.2624 -0.150262 35.8192 2.45078L7.6756 18.926C3.23322 21.5266 0.5 26.3301 0.5 31.5248V64.4752C0.5 69.6699 3.23322 74.4734 7.6756 77.074L35.8192 93.5492C40.2624 96.1503 45.7376 96.1503 50.1808 93.5492L78.3244 77.074C82.7668 74.4734 85.5 69.6699 85.5 64.4752V31.5248C85.5 26.3301 82.7668 21.5266 78.3244 18.926Z'
+        );
+
+        --wui-width-network-sm: 36px;
+        --wui-width-network-md: 48px;
+        --wui-width-network-lg: 86px;
+
+        --wui-height-network-sm: 40px;
+        --wui-height-network-md: 54px;
+        --wui-height-network-lg: 96px;
+
+        --wui-icon-size-network-xs: 12px;
+        --wui-icon-size-network-sm: 16px;
+        --wui-icon-size-network-md: 24px;
+        --wui-icon-size-network-lg: 42px;
+
+        --wui-color-inherit: inherit;
+
+        --wui-color-inverse-100: #fff;
+        --wui-color-inverse-000: #000;
+
+        --wui-cover: rgba(20, 20, 20, 0.8);
+
+        --wui-color-modal-bg: var(--wui-color-modal-bg-base);
+
+        --wui-color-accent-100: var(--wui-color-accent-base-100);
+        --wui-color-accent-090: var(--wui-color-accent-base-090);
+        --wui-color-accent-080: var(--wui-color-accent-base-080);
+
+        --wui-color-success-100: var(--wui-color-success-base-100);
+        --wui-color-success-125: var(--wui-color-success-base-125);
+
+        --wui-color-warning-100: var(--wui-color-warning-base-100);
+
+        --wui-color-error-100: var(--wui-color-error-base-100);
+        --wui-color-error-125: var(--wui-color-error-base-125);
+
+        --wui-color-blue-100: var(--wui-color-blue-base-100);
+        --wui-color-blue-90: var(--wui-color-blue-base-90);
+
+        --wui-icon-box-bg-error-100: var(--wui-icon-box-bg-error-base-100);
+        --wui-icon-box-bg-blue-100: var(--wui-icon-box-bg-blue-base-100);
+        --wui-icon-box-bg-success-100: var(--wui-icon-box-bg-success-base-100);
+        --wui-icon-box-bg-inverse-100: var(--wui-icon-box-bg-inverse-base-100);
+
+        --wui-all-wallets-bg-100: var(--wui-all-wallets-bg-100);
+
+        --wui-avatar-border: var(--wui-avatar-border-base);
+
+        --wui-thumbnail-border: var(--wui-thumbnail-border-base);
+
+        --wui-wallet-button-bg: var(--wui-wallet-button-bg-base);
+
+        --wui-box-shadow-blue: var(--wui-color-accent-glass-020);
+      }
+
+      @supports (background: color-mix(in srgb, white 50%, black)) {
+        :root {
+          --wui-color-modal-bg: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-modal-bg-base)
+          );
+
+          --wui-box-shadow-blue: color-mix(in srgb, var(--wui-color-accent-100) 20%, transparent);
+
+          --wui-color-accent-100: color-mix(
+            in srgb,
+            var(--wui-color-accent-base-100) 100%,
+            transparent
+          );
+          --wui-color-accent-090: color-mix(
+            in srgb,
+            var(--wui-color-accent-base-100) 90%,
+            transparent
+          );
+          --wui-color-accent-080: color-mix(
+            in srgb,
+            var(--wui-color-accent-base-100) 80%,
+            transparent
+          );
+          --wui-color-accent-glass-090: color-mix(
+            in srgb,
+            var(--wui-color-accent-base-100) 90%,
+            transparent
+          );
+          --wui-color-accent-glass-080: color-mix(
+            in srgb,
+            var(--wui-color-accent-base-100) 80%,
+            transparent
+          );
+          --wui-color-accent-glass-020: color-mix(
+            in srgb,
+            var(--wui-color-accent-base-100) 20%,
+            transparent
+          );
+          --wui-color-accent-glass-015: color-mix(
+            in srgb,
+            var(--wui-color-accent-base-100) 15%,
+            transparent
+          );
+          --wui-color-accent-glass-010: color-mix(
+            in srgb,
+            var(--wui-color-accent-base-100) 10%,
+            transparent
+          );
+          --wui-color-accent-glass-005: color-mix(
+            in srgb,
+            var(--wui-color-accent-base-100) 5%,
+            transparent
+          );
+          --wui-color-accent-002: color-mix(
+            in srgb,
+            var(--wui-color-accent-base-100) 2%,
+            transparent
+          );
+
+          --wui-color-fg-100: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-fg-100)
+          );
+          --wui-color-fg-125: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-fg-125)
+          );
+          --wui-color-fg-150: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-fg-150)
+          );
+          --wui-color-fg-175: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-fg-175)
+          );
+          --wui-color-fg-200: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-fg-200)
+          );
+          --wui-color-fg-225: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-fg-225)
+          );
+          --wui-color-fg-250: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-fg-250)
+          );
+          --wui-color-fg-275: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-fg-275)
+          );
+          --wui-color-fg-300: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-fg-300)
+          );
+          --wui-color-fg-325: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-fg-325)
+          );
+          --wui-color-fg-350: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-fg-350)
+          );
+
+          --wui-color-bg-100: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-bg-100)
+          );
+          --wui-color-bg-125: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-bg-125)
+          );
+          --wui-color-bg-150: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-bg-150)
+          );
+          --wui-color-bg-175: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-bg-175)
+          );
+          --wui-color-bg-200: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-bg-200)
+          );
+          --wui-color-bg-225: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-bg-225)
+          );
+          --wui-color-bg-250: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-bg-250)
+          );
+          --wui-color-bg-275: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-bg-275)
+          );
+          --wui-color-bg-300: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-bg-300)
+          );
+          --wui-color-bg-325: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-bg-325)
+          );
+          --wui-color-bg-350: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-bg-350)
+          );
+
+          --wui-color-success-100: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-success-base-100)
+          );
+          --wui-color-success-125: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-success-base-125)
+          );
+
+          --wui-color-warning-100: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-warning-base-100)
+          );
+
+          --wui-color-error-100: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-error-base-100)
+          );
+          --wui-color-blue-100: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-blue-base-100)
+          );
+          --wui-color-blue-90: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-blue-base-90)
+          );
+          --wui-color-error-125: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-color-error-base-125)
+          );
+
+          --wui-icon-box-bg-error-100: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-icon-box-bg-error-base-100)
+          );
+          --wui-icon-box-bg-accent-100: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-icon-box-bg-blue-base-100)
+          );
+          --wui-icon-box-bg-success-100: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-icon-box-bg-success-base-100)
+          );
+          --wui-icon-box-bg-inverse-100: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-icon-box-bg-inverse-base-100)
+          );
+
+          --wui-all-wallets-bg-100: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-all-wallets-bg-100)
+          );
+
+          --wui-avatar-border: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-avatar-border-base)
+          );
+
+          --wui-thumbnail-border: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-thumbnail-border-base)
+          );
+
+          --wui-wallet-button-bg: color-mix(
+            in srgb,
+            var(--w3m-color-mix) var(--w3m-color-mix-strength),
+            var(--wui-wallet-button-bg-base)
+          );
+        }
+      }
+    `,light:i.css`
+      :root {
+        --w3m-color-mix: ${(0,i.unsafeCSS)(e?.["--w3m-color-mix"]||"#fff")};
+        --w3m-accent: ${(0,i.unsafeCSS)((0,s.getW3mThemeVariables)(e,"dark")["--w3m-accent"])};
+        --w3m-default: #fff;
+
+        --wui-color-modal-bg-base: ${(0,i.unsafeCSS)((0,s.getW3mThemeVariables)(e,"dark")["--w3m-background"])};
+        --wui-color-accent-base-100: var(--w3m-accent);
+
+        --wui-color-blueberry-100: hsla(230, 100%, 67%, 1);
+        --wui-color-blueberry-090: hsla(231, 76%, 61%, 1);
+        --wui-color-blueberry-080: hsla(230, 59%, 55%, 1);
+        --wui-color-blueberry-050: hsla(231, 100%, 70%, 0.1);
+
+        --wui-color-fg-100: #e4e7e7;
+        --wui-color-fg-125: #d0d5d5;
+        --wui-color-fg-150: #a8b1b1;
+        --wui-color-fg-175: #a8b0b0;
+        --wui-color-fg-200: #949e9e;
+        --wui-color-fg-225: #868f8f;
+        --wui-color-fg-250: #788080;
+        --wui-color-fg-275: #788181;
+        --wui-color-fg-300: #6e7777;
+        --wui-color-fg-325: #9a9a9a;
+        --wui-color-fg-350: #363636;
+
+        --wui-color-bg-100: #141414;
+        --wui-color-bg-125: #191a1a;
+        --wui-color-bg-150: #1e1f1f;
+        --wui-color-bg-175: #222525;
+        --wui-color-bg-200: #272a2a;
+        --wui-color-bg-225: #2c3030;
+        --wui-color-bg-250: #313535;
+        --wui-color-bg-275: #363b3b;
+        --wui-color-bg-300: #3b4040;
+        --wui-color-bg-325: #252525;
+        --wui-color-bg-350: #ffffff;
+
+        --wui-color-success-base-100: #26d962;
+        --wui-color-success-base-125: #30a46b;
+
+        --wui-color-warning-base-100: #f3a13f;
+
+        --wui-color-error-base-100: #f25a67;
+        --wui-color-error-base-125: #df4a34;
+
+        --wui-color-blue-base-100: rgba(102, 125, 255, 1);
+        --wui-color-blue-base-90: rgba(102, 125, 255, 0.9);
+
+        --wui-color-success-glass-001: rgba(38, 217, 98, 0.01);
+        --wui-color-success-glass-002: rgba(38, 217, 98, 0.02);
+        --wui-color-success-glass-005: rgba(38, 217, 98, 0.05);
+        --wui-color-success-glass-010: rgba(38, 217, 98, 0.1);
+        --wui-color-success-glass-015: rgba(38, 217, 98, 0.15);
+        --wui-color-success-glass-020: rgba(38, 217, 98, 0.2);
+        --wui-color-success-glass-025: rgba(38, 217, 98, 0.25);
+        --wui-color-success-glass-030: rgba(38, 217, 98, 0.3);
+        --wui-color-success-glass-060: rgba(38, 217, 98, 0.6);
+        --wui-color-success-glass-080: rgba(38, 217, 98, 0.8);
+
+        --wui-color-success-glass-reown-020: rgba(48, 164, 107, 0.2);
+
+        --wui-color-warning-glass-reown-020: rgba(243, 161, 63, 0.2);
+
+        --wui-color-error-glass-001: rgba(242, 90, 103, 0.01);
+        --wui-color-error-glass-002: rgba(242, 90, 103, 0.02);
+        --wui-color-error-glass-005: rgba(242, 90, 103, 0.05);
+        --wui-color-error-glass-010: rgba(242, 90, 103, 0.1);
+        --wui-color-error-glass-015: rgba(242, 90, 103, 0.15);
+        --wui-color-error-glass-020: rgba(242, 90, 103, 0.2);
+        --wui-color-error-glass-025: rgba(242, 90, 103, 0.25);
+        --wui-color-error-glass-030: rgba(242, 90, 103, 0.3);
+        --wui-color-error-glass-060: rgba(242, 90, 103, 0.6);
+        --wui-color-error-glass-080: rgba(242, 90, 103, 0.8);
+
+        --wui-color-error-glass-reown-020: rgba(223, 74, 52, 0.2);
+
+        --wui-color-gray-glass-001: rgba(255, 255, 255, 0.01);
+        --wui-color-gray-glass-002: rgba(255, 255, 255, 0.02);
+        --wui-color-gray-glass-005: rgba(255, 255, 255, 0.05);
+        --wui-color-gray-glass-010: rgba(255, 255, 255, 0.1);
+        --wui-color-gray-glass-015: rgba(255, 255, 255, 0.15);
+        --wui-color-gray-glass-020: rgba(255, 255, 255, 0.2);
+        --wui-color-gray-glass-025: rgba(255, 255, 255, 0.25);
+        --wui-color-gray-glass-030: rgba(255, 255, 255, 0.3);
+        --wui-color-gray-glass-060: rgba(255, 255, 255, 0.6);
+        --wui-color-gray-glass-080: rgba(255, 255, 255, 0.8);
+        --wui-color-gray-glass-090: rgba(255, 255, 255, 0.9);
+
+        --wui-color-dark-glass-100: rgba(42, 42, 42, 1);
+
+        --wui-icon-box-bg-error-base-100: #3c2426;
+        --wui-icon-box-bg-blue-base-100: #20303f;
+        --wui-icon-box-bg-success-base-100: #1f3a28;
+        --wui-icon-box-bg-inverse-base-100: #243240;
+
+        --wui-all-wallets-bg-100: #222b35;
+
+        --wui-avatar-border-base: #252525;
+
+        --wui-thumbnail-border-base: #252525;
+
+        --wui-wallet-button-bg-base: var(--wui-color-bg-125);
+
+        --w3m-card-embedded-shadow-color: rgb(17 17 18 / 25%);
+      }
+    `,dark:i.css`
+      :root {
+        --w3m-color-mix: ${(0,i.unsafeCSS)(e?.["--w3m-color-mix"]||"#000")};
+        --w3m-accent: ${(0,i.unsafeCSS)((0,s.getW3mThemeVariables)(e,"light")["--w3m-accent"])};
+        --w3m-default: #000;
+
+        --wui-color-modal-bg-base: ${(0,i.unsafeCSS)((0,s.getW3mThemeVariables)(e,"light")["--w3m-background"])};
+        --wui-color-accent-base-100: var(--w3m-accent);
+
+        --wui-color-blueberry-100: hsla(231, 100%, 70%, 1);
+        --wui-color-blueberry-090: hsla(231, 97%, 72%, 1);
+        --wui-color-blueberry-080: hsla(231, 92%, 74%, 1);
+
+        --wui-color-fg-100: #141414;
+        --wui-color-fg-125: #2d3131;
+        --wui-color-fg-150: #474d4d;
+        --wui-color-fg-175: #636d6d;
+        --wui-color-fg-200: #798686;
+        --wui-color-fg-225: #828f8f;
+        --wui-color-fg-250: #8b9797;
+        --wui-color-fg-275: #95a0a0;
+        --wui-color-fg-300: #9ea9a9;
+        --wui-color-fg-325: #9a9a9a;
+        --wui-color-fg-350: #d0d0d0;
+
+        --wui-color-bg-100: #ffffff;
+        --wui-color-bg-125: #f5fafa;
+        --wui-color-bg-150: #f3f8f8;
+        --wui-color-bg-175: #eef4f4;
+        --wui-color-bg-200: #eaf1f1;
+        --wui-color-bg-225: #e5eded;
+        --wui-color-bg-250: #e1e9e9;
+        --wui-color-bg-275: #dce7e7;
+        --wui-color-bg-300: #d8e3e3;
+        --wui-color-bg-325: #f3f3f3;
+        --wui-color-bg-350: #202020;
+
+        --wui-color-success-base-100: #26b562;
+        --wui-color-success-base-125: #30a46b;
+
+        --wui-color-warning-base-100: #f3a13f;
+
+        --wui-color-error-base-100: #f05142;
+        --wui-color-error-base-125: #df4a34;
+
+        --wui-color-blue-base-100: rgba(102, 125, 255, 1);
+        --wui-color-blue-base-90: rgba(102, 125, 255, 0.9);
+
+        --wui-color-success-glass-001: rgba(38, 181, 98, 0.01);
+        --wui-color-success-glass-002: rgba(38, 181, 98, 0.02);
+        --wui-color-success-glass-005: rgba(38, 181, 98, 0.05);
+        --wui-color-success-glass-010: rgba(38, 181, 98, 0.1);
+        --wui-color-success-glass-015: rgba(38, 181, 98, 0.15);
+        --wui-color-success-glass-020: rgba(38, 181, 98, 0.2);
+        --wui-color-success-glass-025: rgba(38, 181, 98, 0.25);
+        --wui-color-success-glass-030: rgba(38, 181, 98, 0.3);
+        --wui-color-success-glass-060: rgba(38, 181, 98, 0.6);
+        --wui-color-success-glass-080: rgba(38, 181, 98, 0.8);
+
+        --wui-color-success-glass-reown-020: rgba(48, 164, 107, 0.2);
+
+        --wui-color-warning-glass-reown-020: rgba(243, 161, 63, 0.2);
+
+        --wui-color-error-glass-001: rgba(240, 81, 66, 0.01);
+        --wui-color-error-glass-002: rgba(240, 81, 66, 0.02);
+        --wui-color-error-glass-005: rgba(240, 81, 66, 0.05);
+        --wui-color-error-glass-010: rgba(240, 81, 66, 0.1);
+        --wui-color-error-glass-015: rgba(240, 81, 66, 0.15);
+        --wui-color-error-glass-020: rgba(240, 81, 66, 0.2);
+        --wui-color-error-glass-025: rgba(240, 81, 66, 0.25);
+        --wui-color-error-glass-030: rgba(240, 81, 66, 0.3);
+        --wui-color-error-glass-060: rgba(240, 81, 66, 0.6);
+        --wui-color-error-glass-080: rgba(240, 81, 66, 0.8);
+
+        --wui-color-error-glass-reown-020: rgba(223, 74, 52, 0.2);
+
+        --wui-icon-box-bg-error-base-100: #f4dfdd;
+        --wui-icon-box-bg-blue-base-100: #d9ecfb;
+        --wui-icon-box-bg-success-base-100: #daf0e4;
+        --wui-icon-box-bg-inverse-base-100: #dcecfc;
+
+        --wui-all-wallets-bg-100: #e8f1fa;
+
+        --wui-avatar-border-base: #f3f4f4;
+
+        --wui-thumbnail-border-base: #eaefef;
+
+        --wui-wallet-button-bg-base: var(--wui-color-bg-125);
+
+        --wui-color-gray-glass-001: rgba(0, 0, 0, 0.01);
+        --wui-color-gray-glass-002: rgba(0, 0, 0, 0.02);
+        --wui-color-gray-glass-005: rgba(0, 0, 0, 0.05);
+        --wui-color-gray-glass-010: rgba(0, 0, 0, 0.1);
+        --wui-color-gray-glass-015: rgba(0, 0, 0, 0.15);
+        --wui-color-gray-glass-020: rgba(0, 0, 0, 0.2);
+        --wui-color-gray-glass-025: rgba(0, 0, 0, 0.25);
+        --wui-color-gray-glass-030: rgba(0, 0, 0, 0.3);
+        --wui-color-gray-glass-060: rgba(0, 0, 0, 0.6);
+        --wui-color-gray-glass-080: rgba(0, 0, 0, 0.8);
+        --wui-color-gray-glass-090: rgba(0, 0, 0, 0.9);
+
+        --wui-color-dark-glass-100: rgba(233, 233, 233, 1);
+
+        --w3m-card-embedded-shadow-color: rgb(224 225 233 / 25%);
+      }
+    `}}let n=i.css`
+  *,
+  *::after,
+  *::before,
+  :host {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-style: normal;
+    text-rendering: optimizeSpeed;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
+    font-family: var(--wui-font-family);
+    backface-visibility: hidden;
+  }
+`,c=i.css`
+  button,
+  a {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition:
+      color var(--wui-duration-lg) var(--wui-ease-out-power-1),
+      background-color var(--wui-duration-lg) var(--wui-ease-out-power-1),
+      border var(--wui-duration-lg) var(--wui-ease-out-power-1),
+      border-radius var(--wui-duration-lg) var(--wui-ease-out-power-1),
+      box-shadow var(--wui-duration-lg) var(--wui-ease-out-power-1);
+    will-change: background-color, color, border, box-shadow, border-radius;
+    outline: none;
+    border: none;
+    column-gap: var(--wui-spacing-3xs);
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+  wui-flex {
+    transition: border-radius var(--wui-duration-lg) var(--wui-ease-out-power-1);
+    will-change: border-radius;
+  }
+
+  button:disabled > wui-wallet-image,
+  button:disabled > wui-all-wallets-image,
+  button:disabled > wui-network-image,
+  button:disabled > wui-image,
+  button:disabled > wui-transaction-visual,
+  button:disabled > wui-logo {
+    filter: grayscale(1);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    button:hover:enabled {
+      background-color: var(--wui-color-gray-glass-005);
+    }
+
+    button:active:enabled {
+      background-color: var(--wui-color-gray-glass-010);
+    }
+  }
+
+  button:disabled > wui-icon-box {
+    opacity: 0.5;
+  }
+
+  input {
+    border: none;
+    outline: none;
+    appearance: none;
+  }
+`,u=i.css`
+  .wui-color-inherit {
+    color: var(--wui-color-inherit);
+  }
+
+  .wui-color-accent-100 {
+    color: var(--wui-color-accent-100);
+  }
+
+  .wui-color-error-100 {
+    color: var(--wui-color-error-100);
+  }
+
+  .wui-color-blue-100 {
+    color: var(--wui-color-blue-100);
+  }
+
+  .wui-color-blue-90 {
+    color: var(--wui-color-blue-90);
+  }
+
+  .wui-color-error-125 {
+    color: var(--wui-color-error-125);
+  }
+
+  .wui-color-success-100 {
+    color: var(--wui-color-success-100);
+  }
+
+  .wui-color-success-125 {
+    color: var(--wui-color-success-125);
+  }
+
+  .wui-color-inverse-100 {
+    color: var(--wui-color-inverse-100);
+  }
+
+  .wui-color-inverse-000 {
+    color: var(--wui-color-inverse-000);
+  }
+
+  .wui-color-fg-100 {
+    color: var(--wui-color-fg-100);
+  }
+
+  .wui-color-fg-200 {
+    color: var(--wui-color-fg-200);
+  }
+
+  .wui-color-fg-300 {
+    color: var(--wui-color-fg-300);
+  }
+
+  .wui-color-fg-325 {
+    color: var(--wui-color-fg-325);
+  }
+
+  .wui-color-fg-350 {
+    color: var(--wui-color-fg-350);
+  }
+
+  .wui-bg-color-inherit {
+    background-color: var(--wui-color-inherit);
+  }
+
+  .wui-bg-color-blue-100 {
+    background-color: var(--wui-color-accent-100);
+  }
+
+  .wui-bg-color-error-100 {
+    background-color: var(--wui-color-error-100);
+  }
+
+  .wui-bg-color-error-125 {
+    background-color: var(--wui-color-error-125);
+  }
+
+  .wui-bg-color-success-100 {
+    background-color: var(--wui-color-success-100);
+  }
+
+  .wui-bg-color-success-125 {
+    background-color: var(--wui-color-success-100);
+  }
+
+  .wui-bg-color-inverse-100 {
+    background-color: var(--wui-color-inverse-100);
+  }
+
+  .wui-bg-color-inverse-000 {
+    background-color: var(--wui-color-inverse-000);
+  }
+
+  .wui-bg-color-fg-100 {
+    background-color: var(--wui-color-fg-100);
+  }
+
+  .wui-bg-color-fg-200 {
+    background-color: var(--wui-color-fg-200);
+  }
+
+  .wui-bg-color-fg-300 {
+    background-color: var(--wui-color-fg-300);
+  }
+
+  .wui-color-fg-325 {
+    background-color: var(--wui-color-fg-325);
+  }
+
+  .wui-color-fg-350 {
+    background-color: var(--wui-color-fg-350);
+  }
+`;e.s(["colorStyles",0,u,"elementStyles",0,c,"initializeTheming",0,function(e,i){r=document.createElement("style"),t=document.createElement("style"),o=document.createElement("style"),r.textContent=a(e).core.cssText,t.textContent=a(e).dark.cssText,o.textContent=a(e).light.cssText,document.head.appendChild(r),document.head.appendChild(t),document.head.appendChild(o),l(i)},"resetStyles",0,n,"setColorTheme",0,l,"setThemeVariables",0,function(e){r&&t&&o&&(r.textContent=a(e).core.cssText,t.textContent=a(e).dark.cssText,o.textContent=a(e).light.cssText)}],459088),e.s([],404041)},542904,e=>{"use strict";var r=e.i(247167);let t={ACCOUNT_TABS:[{label:"Tokens"},{label:"NFTs"},{label:"Activity"}],SECURE_SITE_ORIGIN:(void 0!==r.default&&void 0!==r.default.env?r.default.env.NEXT_PUBLIC_SECURE_SITE_ORIGIN:void 0)||"https://secure.walletconnect.org",VIEW_DIRECTION:{Next:"next",Prev:"prev"},DEFAULT_CONNECT_METHOD_ORDER:["email","social","wallet"],ANIMATION_DURATIONS:{HeaderText:120,ModalHeight:150,ViewTransition:150}};e.s(["ConstantsUtil",0,t])},71187,(e,r,t)=>{"use strict";function o(e){try{return JSON.stringify(e)}catch(e){return'"[Circular]"'}}r.exports=function(e,r,t){var i=t&&t.stringify||o;if("object"==typeof e&&null!==e){var s=r.length+1;if(1===s)return e;var l=Array(s);l[0]=i(e);for(var a=1;a<s;a++)l[a]=i(r[a]);return l.join(" ")}if("string"!=typeof e)return e;var n=r.length;if(0===n)return e;for(var c="",u=0,g=-1,w=e&&e.length||0,h=0;h<w;){if(37===e.charCodeAt(h)&&h+1<w){switch(g=g>-1?g:0,e.charCodeAt(h+1)){case 100:case 102:if(u>=n||null==r[u])break;g<h&&(c+=e.slice(g,h)),c+=Number(r[u]),g=h+2,h++;break;case 105:if(u>=n||null==r[u])break;g<h&&(c+=e.slice(g,h)),c+=Math.floor(Number(r[u])),g=h+2,h++;break;case 79:case 111:case 106:if(u>=n||void 0===r[u])break;g<h&&(c+=e.slice(g,h));var b=typeof r[u];if("string"===b){c+="'"+r[u]+"'",g=h+2,h++;break}if("function"===b){c+=r[u].name||"<anonymous>",g=h+2,h++;break}c+=i(r[u]),g=h+2,h++;break;case 115:if(u>=n)break;g<h&&(c+=e.slice(g,h)),c+=String(r[u]),g=h+2,h++;break;case 37:g<h&&(c+=e.slice(g,h)),c+="%",g=h+2,h++,u--}++u}++h}return -1===g?e:(g<w&&(c+=e.slice(g)),c)}},102232,(e,r,t)=>{"use strict";let o=e.r(71187);r.exports=s;let i=function(){function e(e){return void 0!==e&&e}try{if("u">typeof globalThis)return globalThis;return Object.defineProperty(Object.prototype,"globalThis",{get:function(){return delete Object.prototype.globalThis,this.globalThis=this},configurable:!0}),globalThis}catch(r){return e(self)||e(window)||e(this)||{}}}().console||{};function s(e){var r,t;(e=e||{}).browser=e.browser||{};let o=e.browser.transmit;if(o&&"function"!=typeof o.send)throw Error("pino: transmit option must have a send function");let u=e.browser.write||i;e.browser.write&&(e.browser.asObject=!0);let g=e.serializers||{},d=(r=e.browser.serialize,Array.isArray(r)?r.filter(function(e){return"!stdSerializers.err"!==e}):!0===r&&Object.keys(g)),m=e.browser.serialize;Array.isArray(e.browser.serialize)&&e.browser.serialize.indexOf("!stdSerializers.err")>-1&&(m=!1),"function"==typeof u&&(u.error=u.fatal=u.warn=u.info=u.debug=u.trace=u),!1===e.enabled&&(e.level="silent");let f=e.level||"info",p=Object.create(u);p.log||(p.log=w),Object.defineProperty(p,"levelVal",{get:function(){return"silent"===this.level?1/0:this.levels.values[this.level]}}),Object.defineProperty(p,"level",{get:function(){return this._level},set:function(e){if("silent"!==e&&!this.levels.values[e])throw Error("unknown level "+e);this._level=e,l(v,p,"error","log"),l(v,p,"fatal","error"),l(v,p,"warn","error"),l(v,p,"info","log"),l(v,p,"debug","log"),l(v,p,"trace","log")}});let v={transmit:o,serialize:d,asObject:e.browser.asObject,levels:["error","fatal","warn","info","debug","trace"],timestamp:"function"==typeof(t=e).timestamp?t.timestamp:!1===t.timestamp?h:b};return p.levels=s.levels,p.level=f,p.setMaxListeners=p.getMaxListeners=p.emit=p.addListener=p.on=p.prependListener=p.once=p.prependOnceListener=p.removeListener=p.removeAllListeners=p.listeners=p.listenerCount=p.eventNames=p.write=p.flush=w,p.serializers=g,p._serialize=d,p._stdErrSerialize=m,p.child=function(r,t){if(!r)throw Error("missing bindings for child Pino");t=t||{},d&&r.serializers&&(t.serializers=r.serializers);let i=t.serializers;if(d&&i){var s=Object.assign({},g,i),l=!0===e.browser.serialize?Object.keys(s):d;delete r.serializers,a([r],l,s,this._stdErrSerialize)}function u(e){this._childLevel=(0|e._childLevel)+1,this.error=n(e,r,"error"),this.fatal=n(e,r,"fatal"),this.warn=n(e,r,"warn"),this.info=n(e,r,"info"),this.debug=n(e,r,"debug"),this.trace=n(e,r,"trace"),s&&(this.serializers=s,this._serialize=l),o&&(this._logEvent=c([].concat(e._logEvent.bindings,r)))}return u.prototype=this,new u(this)},o&&(p._logEvent=c()),p}function l(e,r,t,l){let n=Object.getPrototypeOf(r);r[t]=r.levelVal>r.levels.values[t]?w:n[t]?n[t]:i[t]||i[l]||w,function(e,r,t){if(e.transmit||r[t]!==w){var l;r[t]=(l=r[t],function(){let n=e.timestamp(),u=Array(arguments.length),g=Object.getPrototypeOf&&Object.getPrototypeOf(this)===i?i:this;for(var w,h,b,d=0;d<u.length;d++)u[d]=arguments[d];if(e.serialize&&!e.asObject&&a(u,this._serialize,this.serializers,this._stdErrSerialize),e.asObject?l.call(g,function(e,r,t,i){e._serialize&&a(t,e._serialize,e.serializers,e._stdErrSerialize);let l=t.slice(),n=l[0],c={};i&&(c.time=i),c.level=s.levels.values[r];let u=(0|e._childLevel)+1;if(u<1&&(u=1),null!==n&&"object"==typeof n){for(;u--&&"object"==typeof l[0];)Object.assign(c,l.shift());n=l.length?o(l.shift(),l):void 0}else"string"==typeof n&&(n=o(l.shift(),l));return void 0!==n&&(c.msg=n),c}(this,t,u,n)):l.apply(g,u),e.transmit){let o,i,l,g,d,m,f=e.transmit.level||r.level,p=s.levels.values[f],v=s.levels.values[t];if(v<p)return;w=this,h={ts:n,methodLevel:t,methodValue:v,transmitLevel:f,transmitValue:s.levels.values[e.transmit.level||r.level],send:e.transmit.send,val:r.levelVal},b=u,o=h.send,i=h.ts,l=h.methodLevel,g=h.methodValue,d=h.val,m=w._logEvent.bindings,a(b,w._serialize||Object.keys(w.serializers),w.serializers,void 0===w._stdErrSerialize||w._stdErrSerialize),w._logEvent.ts=i,w._logEvent.messages=b.filter(function(e){return -1===m.indexOf(e)}),w._logEvent.level.label=l,w._logEvent.level.value=g,o(l,w._logEvent,d),w._logEvent=c(m)}})}}(e,r,t)}function a(e,r,t,o){for(let i in e)if(o&&e[i]instanceof Error)e[i]=s.stdSerializers.err(e[i]);else if("object"==typeof e[i]&&!Array.isArray(e[i]))for(let o in e[i])r&&r.indexOf(o)>-1&&o in t&&(e[i][o]=t[o](e[i][o]))}function n(e,r,t){return function(){let o=Array(1+arguments.length);o[0]=r;for(var i=1;i<o.length;i++)o[i]=arguments[i-1];return e[t].apply(this,o)}}function c(e){return{ts:0,messages:[],bindings:e||[],level:{label:"",value:0}}}function u(){return{}}function g(e){return e}function w(){}function h(){return!1}function b(){return Date.now()}s.levels={values:{fatal:60,error:50,warn:40,info:30,debug:20,trace:10},labels:{10:"trace",20:"debug",30:"info",40:"warn",50:"error",60:"fatal"}},s.stdSerializers={mapHttpRequest:u,mapHttpResponse:u,wrapRequestSerializer:g,wrapResponseSerializer:g,wrapErrorSerializer:g,req:u,res:u,err:function(e){let r={type:e.constructor.name,msg:e.message,stack:e.stack};for(let t in e)void 0===r[t]&&(r[t]=e[t]);return r}},s.stdTimeFunctions=Object.assign({},{nullTime:h,epochTime:b,unixTime:function(){return Math.round(Date.now()/1e3)},isoTime:function(){return new Date(Date.now()).toISOString()}})},278662,31794,e=>{"use strict";var r=e.i(102232);function t(e){return"string"==typeof e?e:JSON.stringify(e,(e,r)=>"bigint"==typeof r?r.toString()+"n":r)||""}e.s(["safeJsonParse",0,function(e){if("string"!=typeof e)throw Error(`Cannot safe json parse value of type ${typeof e}`);try{return JSON.parse(e.replace(/([\[:])?(\d{17,}|(?:[9](?:[1-9]07199254740991|0[1-9]7199254740991|00[8-9]199254740991|007[2-9]99254740991|007199[3-9]54740991|0071992[6-9]4740991|00719925[5-9]740991|007199254[8-9]40991|0071992547[5-9]0991|00719925474[1-9]991|00719925474099[2-9])))([,\}\]])/g,'$1"$2n"$3'),(e,r)=>"string"==typeof r&&r.match(/^\d+n$/)?BigInt(r.substring(0,r.length-1)):r)}catch(r){return e}},"safeJsonStringify",0,t],31794);let o="custom_context";class i{constructor(e){this.nodeValue=e,this.sizeInBytes=new TextEncoder().encode(this.nodeValue).length,this.next=null}get value(){return this.nodeValue}get size(){return this.sizeInBytes}}class s{constructor(e){this.head=null,this.tail=null,this.lengthInNodes=0,this.maxSizeInBytes=e,this.sizeInBytes=0}append(e){let r=new i(e);if(r.size>this.maxSizeInBytes)throw Error(`[LinkedList] Value too big to insert into list: ${e} with size ${r.size}`);for(;this.size+r.size>this.maxSizeInBytes;)this.shift();this.head?this.tail&&(this.tail.next=r):this.head=r,this.tail=r,this.lengthInNodes++,this.sizeInBytes+=r.size}shift(){if(!this.head)return;let e=this.head;this.head=this.head.next,this.head||(this.tail=null),this.lengthInNodes--,this.sizeInBytes-=e.size}toArray(){let e=[],r=this.head;for(;null!==r;)e.push(r.value),r=r.next;return e}get length(){return this.lengthInNodes}get size(){return this.sizeInBytes}toOrderedArray(){return Array.from(this)}[Symbol.iterator](){let e=this.head;return{next:()=>{if(!e)return{done:!0,value:null};let r=e.value;return e=e.next,{done:!1,value:r}}}}}class l{constructor(e,t=1024e3){this.level=e??"error",this.levelValue=r.levels.values[this.level],this.MAX_LOG_SIZE_IN_BYTES=t,this.logs=new s(this.MAX_LOG_SIZE_IN_BYTES)}forwardToConsole(e,t){t===r.levels.values.error?console.error(e):t===r.levels.values.warn?console.warn(e):t===r.levels.values.debug?console.debug(e):t===r.levels.values.trace?console.trace(e):console.log(e)}appendToLogs(e){this.logs.append(t({timestamp:new Date().toISOString(),log:e}));let r="string"==typeof e?JSON.parse(e).level:e.level;r>=this.levelValue&&this.forwardToConsole(e,r)}getLogs(){return this.logs}clearLogs(){this.logs=new s(this.MAX_LOG_SIZE_IN_BYTES)}getLogArray(){return Array.from(this.logs)}logsToBlob(e){let r=this.getLogArray();return r.push(t({extraMetadata:e})),new Blob(r,{type:"application/json"})}}class a{constructor(e,r=1024e3){this.baseChunkLogger=new l(e,r)}write(e){this.baseChunkLogger.appendToLogs(e)}getLogs(){return this.baseChunkLogger.getLogs()}clearLogs(){this.baseChunkLogger.clearLogs()}getLogArray(){return this.baseChunkLogger.getLogArray()}logsToBlob(e){return this.baseChunkLogger.logsToBlob(e)}downloadLogsBlobInBrowser(e){let r=URL.createObjectURL(this.logsToBlob(e)),t=document.createElement("a");t.href=r,t.download=`walletconnect-logs-${new Date().toISOString()}.txt`,document.body.appendChild(t),t.click(),document.body.removeChild(t),URL.revokeObjectURL(r)}}class n{constructor(e,r=1024e3){this.baseChunkLogger=new l(e,r)}write(e){this.baseChunkLogger.appendToLogs(e)}getLogs(){return this.baseChunkLogger.getLogs()}clearLogs(){this.baseChunkLogger.clearLogs()}getLogArray(){return this.baseChunkLogger.getLogArray()}logsToBlob(e){return this.baseChunkLogger.logsToBlob(e)}}var c=Object.defineProperty,u=Object.defineProperties,g=Object.getOwnPropertyDescriptors,w=Object.getOwnPropertySymbols,h=Object.prototype.hasOwnProperty,b=Object.prototype.propertyIsEnumerable,d=(e,r,t)=>r in e?c(e,r,{enumerable:!0,configurable:!0,writable:!0,value:t}):e[r]=t,m=(e,r)=>{for(var t in r||(r={}))h.call(r,t)&&d(e,t,r[t]);if(w)for(var t of w(r))b.call(r,t)&&d(e,t,r[t]);return e};function f(e,r=o){return typeof e.bindings>"u"?function(e,r=o){return e[r]||""}(e,r):e.bindings().context||""}e.s(["generateChildLogger",0,function(e,r,t=o){let i=function(e,r,t=o){let i=f(e,t);return i.trim()?`${i}/${r}`:r}(e,r,t);return function(e,r,t=o){return e[t]=r,e}(e.child({context:i}),i,t)},"generatePlatformLogger",0,function(e){var t,o,i,s;let l,c,w,h;return"u">typeof e.loggerOverride&&"string"!=typeof e.loggerOverride?{logger:e.loggerOverride,chunkLoggerController:null}:"u">typeof window?(h=new a(null==(i=(o=e).opts)?void 0:i.level,o.maxSizeInBytes),{logger:(0,r.default)((c=m({},o.opts),w={level:"trace",browser:u(m({},null==(s=o.opts)?void 0:s.browser),g({write:e=>h.write(e)}))},u(c,g(w)))),chunkLoggerController:h}):(l=new n(null==(t=e.opts)?void 0:t.level,e.maxSizeInBytes),{logger:(0,r.default)(u(m({},e.opts),g({level:"trace"})),l),chunkLoggerController:l})},"getDefaultLoggerOptions",0,function(e){return u(m({},e),g({level:e?.level||"info"}))},"getLoggerContext",0,f],278662)}]);
